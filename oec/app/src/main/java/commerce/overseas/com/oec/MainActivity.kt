@@ -10,7 +10,6 @@ import android.support.v4.view.ViewPager
 import android.view.View
 import commerce.overseas.com.oec.base.BaseBackExitActivity
 import commerce.overseas.com.oec.base.BaseFragment
-import commerce.overseas.com.oec.ui.MainTabFragment
 import commerce.overseas.com.oec.ui.MiddleTabFragment
 import commerce.overseas.com.oec.ui.MyTabFragment
 import commerce.overseas.com.oec.ui.MainTabClassification
@@ -18,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.support.design.internal.BottomNavigationItemView
 import android.support.design.internal.BottomNavigationMenuView
 import commerce.overseas.com.oec.statusBar.ImmersionBar
+import commerce.overseas.com.oec.ui.MainTabFragment
 
 @SuppressLint("RestrictedApi")
 class MainActivity : BaseBackExitActivity() {

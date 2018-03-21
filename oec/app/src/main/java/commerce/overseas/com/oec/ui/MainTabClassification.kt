@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import commerce.overseas.com.oec.R
 import commerce.overseas.com.oec.base.BaseFragment
 import kotlinx.android.synthetic.main.fra_maintab.*
+import kotlinx.android.synthetic.main.fra_maintabclass.*
 
 /**
  * @Time : 2018/3/20 no 下午5:25
