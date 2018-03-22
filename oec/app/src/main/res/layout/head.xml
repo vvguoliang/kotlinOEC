@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
-    android:background="#fff"
     android:gravity="center">
 
     <TextView
-        android:id="@+id/headText"
+        android:id="@+id/head_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/white"
         android:gravity="center"
-        android:text="头部"
-        android:textColor="#000" />
+        android:padding="@dimen/commont_dp10"
+        android:text="最新上架"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/commont_dp20" />
 
-</LinearLayout>
+    <commerce.overseas.com.oec.ui.viewpaget.ChildViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/head_text1"
+        android:layout_below="@id/head_text"
+        android:background="@color/gray_ligh" />
+
+    <TextView
+        android:id="@+id/head_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:padding="@dimen/commont_dp10"
+        android:text="最新上架"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/commont_dp16" />
+
+</RelativeLayout>

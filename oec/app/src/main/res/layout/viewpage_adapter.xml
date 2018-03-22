@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardUseCompatPadding="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/commont_dp10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/new_lin1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/new_image1"
+                    android:layout_width="90dp"
+                    android:layout_height="155dp"
+                    android:layout_gravity="center"
+                    app:actualImageScaleType="fitXY"
+                    app:placeholderImage="@mipmap/placeholder"
+                    app:placeholderImageScaleType="fitXY"
+                    app:progressBarAutoRotateInterval="1000"
+                    app:progressBarImage="@mipmap/photo_loading"
+                    app:progressBarImageScaleType="center"
+                    app:viewAspectRatio="0.75"
+                    fresco:fadeDuration="600" />
+
+                <TextView
+                    android:id="@+id/new_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/commont_dp16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/new_lin2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/new_image2"
+                    android:layout_width="90dp"
+                    android:layout_height="155dp"
+                    app:actualImageScaleType="fitXY"
+                    app:placeholderImage="@mipmap/placeholder"
+                    app:placeholderImageScaleType="fitXY"
+                    app:progressBarAutoRotateInterval="1000"
+                    app:progressBarImage="@mipmap/photo_loading"
+                    app:progressBarImageScaleType="center"
+                    app:viewAspectRatio="0.75"
+                    fresco:fadeDuration="600" />
+
+                <TextView
+                    android:id="@+id/new_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/commont_dp16" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.v7.widget.CardView>

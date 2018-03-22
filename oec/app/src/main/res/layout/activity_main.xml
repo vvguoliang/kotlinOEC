@@ -13,22 +13,75 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_alignParentTop="true"
-        android:background="@android:color/transparent"/>
+        android:background="@android:color/transparent" />
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/commont_dp48"
+        android:layout_below="@id/top_view"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/tv_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="@dimen/commont_dp16"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/iv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/commont_dp20"
+            android:layout_marginRight="@dimen/commont_dp20"
+            android:background="@drawable/shape_corner"
+            android:drawableLeft="@mipmap/icon_search"
+            android:padding="@dimen/commont_dp5"
+            android:text="@string/search_text"
+            android:textColor="@color/gray_ligh1"
+            android:textSize="@dimen/commont_dp14"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/commont_dp20"
+            android:src="@mipmap/icon_scan"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/commont_dp05"
+            android:layout_alignParentBottom="true"
+            android:src="@color/gray_ligh" />
+
+    </RelativeLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
-        android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/navigation" />
+        android:layout_above="@id/navigation"
+        android:layout_below="@id/toolbar"
+        android:background="@color/gray_ligh" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

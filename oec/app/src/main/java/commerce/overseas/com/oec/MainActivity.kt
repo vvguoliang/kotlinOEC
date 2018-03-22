@@ -10,17 +10,17 @@ import android.support.v4.view.ViewPager
 import android.view.View
 import commerce.overseas.com.oec.base.BaseBackExitActivity
 import commerce.overseas.com.oec.base.BaseFragment
-import commerce.overseas.com.oec.ui.MiddleTabFragment
-import commerce.overseas.com.oec.ui.MyTabFragment
-import commerce.overseas.com.oec.ui.MainTabClassification
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.design.internal.BottomNavigationItemView
 import android.support.design.internal.BottomNavigationMenuView
+import android.widget.Toast
 import commerce.overseas.com.oec.statusBar.ImmersionBar
-import commerce.overseas.com.oec.ui.MainTabFragment
+import commerce.overseas.com.oec.ui.*
 
 @SuppressLint("RestrictedApi")
 class MainActivity : BaseBackExitActivity() {
+
+    private var searchFragment: SearchFragment? = null
 
     var bluesFragments = listOf<BaseFragment>(MainTabFragment(), MainTabClassification(), MiddleTabFragment(), MyTabFragment())
 
@@ -51,6 +51,15 @@ class MainActivity : BaseBackExitActivity() {
 
             }
         })
+        iv_search.isFocusable = false
+        iv_search.setOnClickListener({
+            if (iv_search.visibility == View.VISIBLE) {
+            if (searchFragment == null) {
+                searchFragment = SearchFragment()
+            }
+            searchFragment?.show(fragmentManager, SEARCH_TAG)
+        } })
+
     }
 
     override fun doBusiness() {
