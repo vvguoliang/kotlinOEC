@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.drawee.view.SimpleDraweeView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:id="@+id/new_image1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="@dimen/commont_dp5"
+    app:actualImageScaleType="fitXY"
+    app:placeholderImage="@mipmap/placeholder"
+    app:placeholderImageScaleType="fitXY"
+    app:progressBarAutoRotateInterval="1000"
+    app:progressBarImage="@mipmap/photo_loading"
+    app:progressBarImageScaleType="center"
+    app:viewAspectRatio="0.75"
+    fresco:fadeDuration="600" />

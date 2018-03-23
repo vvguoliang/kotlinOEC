@@ -72,12 +72,9 @@ public class MainTabFragment extends BaseFragment implements SwipeRefreshLayout.
 
     @Override
     public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (swipe_container.isRefreshing()) {
-                    swipe_container.setRefreshing(false);
-                }
+        handler.postDelayed(() -> {
+            if (swipe_container.isRefreshing()) {
+                swipe_container.setRefreshing(false);
             }
         }, mShowingFragments_time);
 
@@ -168,7 +165,7 @@ public class MainTabFragment extends BaseFragment implements SwipeRefreshLayout.
                         viewPager.setAdapter(mCardAdapter);
                         viewPager.setPageTransformer(false, mCardShadowTransformer);
                         viewPager.setOffscreenPageLimit(3);
-                        handler.postDelayed(new Runnable() {
+                        handler.postDelayed(new Runnable() { // 实现定时轮播
                             @Override
                             public void run() {
                                 int curItem = viewPager.getCurrentItem();

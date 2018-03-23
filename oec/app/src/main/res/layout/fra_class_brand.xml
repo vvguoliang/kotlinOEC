@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/recyclerview_fragment_layout" />
+
+    <commerce.overseas.com.oec.ui.view.WaveSideBar
+        android:id="@+id/sideBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:backgroundColor="#bef9b81b"
+        app:chooseTextColor="@android:color/white"
+        app:circleRadius="24dp"
+        app:hintTextSize="32sp"
+        app:radius="20dp"
+        app:textColor="#969696"
+        app:textSize="10sp" />
+
+</FrameLayout>
+

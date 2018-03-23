@@ -29,19 +29,18 @@ import kotlinx.android.synthetic.main.fra_maintabclass.*
  * ******┃┫┫  ┃┫┫
  * ******┗┻┛  ┗┻┛
  */
-class MainTabClassification : BaseFragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fra_maintabclass, container, false)
-        return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        message.setText(R.string.title_classification)
-    }
-}
+//class MainTabClassification : BaseFragment() {
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//    }
+//
+//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+//        val view = inflater.inflate(R.layout.fra_maintabclass, container, false)
+//        return view
+//    }
+//
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//    }
+//}
