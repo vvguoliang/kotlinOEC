@@ -1,6 +1,8 @@
 package commerce.overseas.com.oec.ui
 
 import android.os.Bundle
+import android.os.Handler
+import android.support.v4.widget.SwipeRefreshLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,19 +30,35 @@ import kotlinx.android.synthetic.main.fra_mainmy.*
  * ******┃┫┫  ┃┫┫
  * ******┗┻┛  ┗┻┛
  */
-class MyTabFragment : BaseFragment() {
+class MyTabFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
+
+    private val mShowingFragments_time = 3000
+
+    private val handler = Handler()
+
+    override fun onRefresh() {
+        handler.postDelayed({
+            if (swipe_container.isRefreshing) {
+                swipe_container.isRefreshing = false
+            }
+        }, mShowingFragments_time.toLong())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fra_mainmy, container, false)
-        return view
+        return inflater.inflate(R.layout.fra_mainmy, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        message.setText(R.string.title_my)
+        swipe_container.setOnRefreshListener(this)
+        //设置颜色
+        swipe_container.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light, android.R.color.holo_orange_light,
+                android.R.color.holo_red_light)
+
     }
 }

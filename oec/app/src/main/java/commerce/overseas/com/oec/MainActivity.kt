@@ -1,6 +1,7 @@
 package commerce.overseas.com.oec
 
 import android.annotation.SuppressLint
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -17,12 +18,15 @@ import android.widget.Toast
 import commerce.overseas.com.oec.statusBar.ImmersionBar
 import commerce.overseas.com.oec.ui.*
 
+@Suppress("DEPRECATION")
 @SuppressLint("RestrictedApi")
 class MainActivity : BaseBackExitActivity() {
 
     private var searchFragment: SearchFragment? = null
 
-    var bluesFragments = listOf<BaseFragment>(MainTabFragment(), MainTabClassification(), MiddleTabFragment(), MyTabFragment())
+    private var bluesFragments = listOf<BaseFragment>(MainTabFragment(), MainTabClassification(), MiddleTabFragment(), MyTabFragment())
+
+    private var drawable: Drawable? = null
 
     override fun initParams(arguments: Bundle?) {
     }
@@ -36,7 +40,7 @@ class MainActivity : BaseBackExitActivity() {
 
     override fun setListener() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        disableShiftMode(navigation);
+        disableShiftMode(navigation)
         viewpager.adapter = viewPagerAdapter(supportFragmentManager, bluesFragments)
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
@@ -47,18 +51,18 @@ class MainActivity : BaseBackExitActivity() {
             }
 
             override fun onPageSelected(position: Int) {
-                navigation.menu.getItem(position).setChecked(true)
-
+                navigation.menu.getItem(position).isChecked = true
             }
         })
         iv_search.isFocusable = false
         iv_search.setOnClickListener({
             if (iv_search.visibility == View.VISIBLE) {
-            if (searchFragment == null) {
-                searchFragment = SearchFragment()
+                if (searchFragment == null) {
+                    searchFragment = SearchFragment()
+                }
+                searchFragment?.show(fragmentManager, SEARCH_TAG)
             }
-            searchFragment?.show(fragmentManager, SEARCH_TAG)
-        } })
+        })
 
     }
 
@@ -68,18 +72,22 @@ class MainActivity : BaseBackExitActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
+                toolbar.visibility = View.VISIBLE
                 viewpager.setCurrentItem(0, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_classification -> {
+                toolbar.visibility = View.VISIBLE
                 viewpager.setCurrentItem(1, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_shopping_cart -> {
+                toolbar.visibility = View.VISIBLE
                 viewpager.setCurrentItem(2, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_my -> {
+                toolbar.visibility = View.GONE
                 viewpager.setCurrentItem(3, true)
                 return@OnNavigationItemSelectedListener true
             }

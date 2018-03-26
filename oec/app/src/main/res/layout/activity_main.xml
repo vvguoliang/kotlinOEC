@@ -21,7 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/commont_dp48"
         android:layout_below="@id/top_view"
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        >
 
         <TextView
             android:id="@+id/tv_bar_title"
@@ -34,20 +35,35 @@
             android:textStyle="bold"
             android:visibility="gone" />
 
-        <EditText
-            android:id="@+id/iv_search"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="@dimen/commont_dp20"
             android:layout_marginRight="@dimen/commont_dp20"
-            android:background="@drawable/shape_corner"
-            android:drawableLeft="@drawable/ic_original_image"
-            android:padding="@dimen/commont_dp5"
-            android:text="@string/search_text"
-            android:textColor="@color/gray_ligh1"
-            android:textSize="@dimen/commont_dp14"
-            android:visibility="visible" />
+            android:padding="@dimen/commont_dp5">
+
+            <EditText
+                android:id="@+id/iv_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_corner"
+                android:paddingLeft="@dimen/commont_dp20"
+                android:text="@string/search_text"
+                android:textColor="@color/gray_ligh1"
+                android:textSize="@dimen/commont_dp14"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_width="@dimen/commont_dp20"
+                android:layout_height="@dimen/commont_dp20"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/commont_dp10"
+                app:srcCompat="@drawable/ic_original_image" />
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/iv_scan"
